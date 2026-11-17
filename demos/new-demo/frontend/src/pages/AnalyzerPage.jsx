@@ -17,6 +17,38 @@ const ALL = { id: 'ALL', label: 'All categories' };
 const VERDICT_TAG = { Suitable: 'green', 'Partially suitable': 'cyan', 'Not yet': 'magenta' };
 const VERDICT_BAR = { Suitable: 'finished', 'Partially suitable': 'active', 'Not yet': 'error' };
 
+const ACCEPTED_FILE_EXTENSIONS = [
+  '.pdf',
+  '.docx',
+  '.doc',
+  '.txt',
+  '.rtf',
+  '.odt',
+  '.pptx',
+  '.xlsx',
+  '.html',
+  '.htm',
+  '.md',
+  '.csv',
+];
+
+const ACCEPTED_MIME_TYPES = [
+  'application/pdf',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  'application/msword',
+  'text/plain',
+  'application/rtf',
+  'text/rtf',
+  'application/vnd.oasis.opendocument.text',
+  'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+  'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  'text/html',
+  'text/markdown',
+  'text/csv',
+];
+
+const ACCEPTED_FORMATS = [...ACCEPTED_FILE_EXTENSIONS, ...ACCEPTED_MIME_TYPES];
+
 function SkillTags({ items, type, icon }) {
   if (!items?.length) return <p className="cds--type-body-compact-01">None.</p>;
   return (
@@ -123,7 +155,19 @@ export default function AnalyzerPage() {
 
   const onFiles = (_e, { addedFiles }) => {
     if (addedFiles?.length) {
-      setFile(addedFiles[0]);
+      const picked = addedFiles[0];
+      const ext = ('.' + (picked.name.split('.').pop() || '')).toLowerCase();
+      const isAcceptedExt = ACCEPTED_FILE_EXTENSIONS.includes(ext);
+      const isAcceptedMime = picked.type && ACCEPTED_MIME_TYPES.includes(picked.type);
+
+      if (picked.invalidFileType || (!isAcceptedExt && !isAcceptedMime && picked.name.includes('.'))) {
+        setError(
+          'Unsupported file format. Please upload a supported text-based document (PDF, DOCX, TXT, RTF, HTML, etc.). Image and screenshot formats are not supported.'
+        );
+        setFile(null);
+        return;
+      }
+      setFile(picked);
       setSample(null);
       setError('');
     }
@@ -156,7 +200,7 @@ export default function AnalyzerPage() {
     <div className="page">
       <h1 className="page__title cds--type-productive-heading-05">Is this role right for you?</h1>
       <p className="page__lead cds--type-body-02">
-        Upload your resume in any format, pick the IBM role you are interested in, and get an advisory fit score with the skills you already show and the ones to build.
+        Upload your resume in a supported format (PDF, DOCX, TXT...), pick the IBM role you are interested in, and get an advisory fit score with the skills you already show and the ones to build.
       </p>
 
       <div className="analyzer">
@@ -202,16 +246,24 @@ export default function AnalyzerPage() {
               <span className="step__num">2</span> Provide your resume
             </div>
             <FileUploaderDropContainer
-              labelText="Drag and drop your resume here or click to upload (any format: PDF, DOCX, TXT, RTF, HTML, image...)"
+              labelText="Drag and drop your resume here or click to upload (PDF, DOCX, TXT, RTF, HTML, ODT, PPTX...)"
               name="resume"
               multiple={false}
               maxFileSize={10 * 1024 * 1024}
               onAddFiles={onFiles}
-              accept={[]}
+              accept={ACCEPTED_FORMATS}
             />
             {file && (
               <div className="file-picked">
-                <FileUploaderItem name={file.name} status="edit" size="md" onDelete={() => setFile(null)} />
+                <FileUploaderItem
+                  name={file.name}
+                  status="edit"
+                  size="md"
+                  onDelete={() => {
+                    setFile(null);
+                    setError('');
+                  }}
+                />
               </div>
             )}
             <div className="divider-or">or use a synthetic sample (no typing or uploading needed)</div>

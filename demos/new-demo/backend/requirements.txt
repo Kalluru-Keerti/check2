@@ -1,0 +1,11 @@
+fastapi>=0.110
+uvicorn[standard]>=0.29
+pydantic>=2.6
+pydantic-settings>=2.2
+python-dotenv>=1.0
+python-multipart>=0.0.9
+faker>=24.0
+httpx>=0.27
+pypdf>=4.2
+# Live mode (DEMO_MODE=live) - uncomment to enable watsonx.ai (verified against 1.5.x, Python 3.10-3.12)
+# ibm-watsonx-ai>=1.5

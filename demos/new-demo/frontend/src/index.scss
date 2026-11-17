@@ -1,0 +1,29 @@
+// Theme must be configured BEFORE @carbon/react is loaded (g90 = dark IBM demo theme).
+@use '@carbon/react/scss/config' with ($font-path: '@ibm/plex');
+@use '@carbon/react/scss/themes';
+@use '@carbon/react/scss/theme' with ($theme: themes.$g90);
+@use '@carbon/react';
+@use '@carbon/react/scss/theme' as t;
+@use '@carbon/react/scss/spacing' as s;
+
+body {
+  background: t.$background;
+  color: t.$text-primary;
+  margin: 0;
+}
+
+.page {
+  padding: s.$spacing-07 s.$spacing-05;
+  max-width: 1584px;
+  margin: 0 auto;
+}
+
+.page__title {
+  margin-bottom: s.$spacing-03;
+}
+
+.page__lead {
+  color: t.$text-secondary;
+  margin-bottom: s.$spacing-07;
+  max-width: 48rem;
+}

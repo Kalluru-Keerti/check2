@@ -1,0 +1,185 @@
+@use '@carbon/react/scss/theme' as t;
+@use '@carbon/react/scss/spacing' as s;
+@use '@carbon/react/scss/type' as ty;
+
+.app-content {
+  padding: 0;
+  margin-top: 3rem; // clear the fixed 48px header
+}
+
+.demo-banner {
+  .cds--inline-notification {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.app-footer {
+  padding: s.$spacing-06 s.$spacing-05;
+  color: t.$text-secondary;
+  @include ty.type-style('label-01');
+}
+
+.analyzer {
+  display: grid;
+  grid-template-columns: minmax(320px, 5fr) 7fr;
+  gap: s.$spacing-06;
+  align-items: start;
+
+  @media (max-width: 66rem) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: t.$layer-01;
+  padding: s.$spacing-06;
+}
+
+.panel__heading {
+  margin-bottom: s.$spacing-05;
+}
+
+.step {
+  margin-bottom: s.$spacing-06;
+}
+
+.step__label {
+  display: flex;
+  align-items: center;
+  gap: s.$spacing-03;
+  margin-bottom: s.$spacing-03;
+  color: t.$text-secondary;
+  @include ty.type-style('label-02');
+}
+
+.step__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: t.$interactive;
+  color: t.$text-on-color;
+  @include ty.type-style('label-01');
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: s.$spacing-03;
+
+  .cds--tag {
+    margin-left: 0;
+    margin-right: s.$spacing-02;
+  }
+}
+
+.divider-or {
+  margin: s.$spacing-05 0;
+  color: t.$text-secondary;
+  @include ty.type-style('label-01');
+  text-align: center;
+}
+
+.file-picked {
+  margin-top: s.$spacing-03;
+}
+
+.actions {
+  display: flex;
+  gap: s.$spacing-04;
+  align-items: center;
+}
+
+.result-empty,
+.result-loading {
+  min-height: 24rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: t.$text-secondary;
+  gap: s.$spacing-04;
+}
+
+.result-score {
+  display: flex;
+  align-items: baseline;
+  gap: s.$spacing-04;
+  margin-bottom: s.$spacing-04;
+
+  &__value {
+    font-size: 4.5rem;
+    line-height: 1;
+    font-weight: 300;
+  }
+
+  &__of {
+    color: t.$text-secondary;
+  }
+}
+
+.result-block {
+  margin-top: s.$spacing-06;
+
+  h4 {
+    margin-bottom: s.$spacing-03;
+  }
+}
+
+.result-summary {
+  margin-top: s.$spacing-05;
+  max-width: 40rem;
+}
+
+.result-meta {
+  margin-top: s.$spacing-06;
+  color: t.$text-secondary;
+  @include ty.type-style('label-01');
+}
+
+.role-filter {
+  display: flex;
+  gap: s.$spacing-05;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: s.$spacing-05;
+}
+
+.arch-diagram {
+  display: grid;
+  gap: s.$spacing-04;
+  margin-bottom: s.$spacing-06;
+}
+
+.arch-layer {
+  background: t.$layer-01;
+  padding: s.$spacing-05;
+  border-left: 4px solid t.$interactive;
+
+  &__title {
+    color: t.$text-secondary;
+    margin-bottom: s.$spacing-03;
+    @include ty.type-style('label-02');
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: s.$spacing-04;
+  }
+
+  &__item {
+    background: t.$layer-02;
+    padding: s.$spacing-04 s.$spacing-05;
+    min-width: 12rem;
+  }
+}
+
+// Space the notifications that follow the skill blocks in the result panel
+.panel .skill-tags + .cds--inline-notification,
+.panel .result-block + .cds--inline-notification {
+  margin-top: s.$spacing-06;
+}

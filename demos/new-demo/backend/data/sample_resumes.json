@@ -1,0 +1,29 @@
+{
+  "disclaimer": "Fictional candidates. Names, employers and details are invented for demonstration only. Emails use @example.com.",
+  "samples": [
+    {
+      "id": "SAMPLE-A",
+      "label": "Jordan Ellis - Senior Software Engineer (strong DevOps / SRE profile)",
+      "suggested_role_id": "ROLE-003",
+      "text": "Jordan Ellis\njordan.ellis@example.com | 555-010-1101\n\nSUMMARY\nSenior software engineer with 8 years of experience building and operating cloud-native services. Strong focus on reliability, automation and developer productivity.\n\nEXPERIENCE\nSenior Software Engineer - Northwind Cloud Services (2020-present)\n- Own the CI/CD pipeline for 40+ microservices using Tekton and Jenkins, cutting release time from 2 days to 45 minutes.\n- Run production workloads on Kubernetes and OpenShift; define SLOs and SLIs and lead incident response and blameless post-mortems.\n- Built observability dashboards with Prometheus and Grafana; automated runbooks in Python and Bash.\n- Infrastructure provisioned with Terraform and Ansible; GitOps delivery with Argo CD.\n\nSoftware Engineer - Contoso Payments (2016-2020)\n- Developed REST APIs in Java and Python, with unit testing and code review in an Agile team.\n- Containerized services with Docker and migrated them to Kubernetes.\n\nSKILLS\nPython, Java, Go, Linux, Kubernetes, OpenShift, Docker, Terraform, Ansible, CI/CD, Tekton, Jenkins, Prometheus, Observability, Incident Response, Automation, Git, REST APIs, Microservices\n\nEDUCATION\nB.Sc. Computer Science, Lakeside University"
+    },
+    {
+      "id": "SAMPLE-B",
+      "label": "Priya Nair - Data Analyst moving toward data science (partial fit)",
+      "suggested_role_id": "ROLE-007",
+      "text": "Priya Nair\npriya.nair@example.com | 555-010-1102\n\nSUMMARY\nData analyst with 4 years of experience turning business data into insight. Currently completing a machine learning certification and looking to move into data science.\n\nEXPERIENCE\nSenior Data Analyst - Fabrikam Retail (2021-present)\n- Write complex SQL queries and build dashboards used by 200 store managers; strong data visualization skills.\n- Ran A/B tests on promotions and reported statistical significance to leadership (experimentation, statistics).\n- Built a customer churn model in Python (scikit-learn) as a side project; basic machine learning experience.\n\nData Analyst - Tailspin Logistics (2019-2021)\n- Cleaned and modeled data in SQL; automated weekly reporting with Python scripts.\n\nSKILLS\nSQL, Python, Statistics, Data Visualization, Excel, Tableau, A/B testing, scikit-learn, Reporting\n\nCERTIFICATIONS\nIntroduction to Machine Learning (in progress)\n\nEDUCATION\nB.Sc. Mathematics, Riverbend University"
+    },
+    {
+      "id": "SAMPLE-C",
+      "label": "Marcus Chen - Technical Sales Engineer (sales / pre-sales profile)",
+      "suggested_role_id": "ROLE-013",
+      "text": "Marcus Chen\nmarcus.chen@example.com | 555-010-1103\n\nSUMMARY\nPre-sales engineer with 7 years of experience helping enterprise clients adopt hybrid cloud and AI solutions. Known for clear technical storytelling and fast proof-of-concept delivery.\n\nEXPERIENCE\nTechnical Sales Specialist - Adventure Works Software (2019-present)\n- Deliver live demos and technical presentations to C-level and engineering audiences; run customer discovery workshops.\n- Led 15 proof of concept engagements; supported RFP response and competitive positioning for hybrid cloud and watsonx opportunities.\n- Practice solution selling with a strong product knowledge of data and AI platforms; coordinate with account executives on pipeline.\n\nSolutions Consultant - Wide World Importers (2016-2019)\n- Built customer demos in Python and JavaScript; documented solution design for enterprise accounts.\n\nSKILLS\nSolution Selling, Demos, Technical Presentations, Customer Discovery, Proof of Concept, RFP Response, Hybrid Cloud, Product Knowledge, Python, Storytelling\n\nEDUCATION\nB.Eng. Information Systems, Harborview University"
+    },
+    {
+      "id": "SAMPLE-D",
+      "label": "Sam Okafor - Project Coordinator (early-career, stretch for AI roles)",
+      "suggested_role_id": "ROLE-008",
+      "text": "Sam Okafor\nsam.okafor@example.com | 555-010-1104\n\nSUMMARY\nProject coordinator with 3 years of experience supporting delivery teams. Curious about AI and exploring a technical career path.\n\nEXPERIENCE\nProject Coordinator - Litware Services (2022-present)\n- Maintain project plans, track risks and budgets, and report status to stakeholders; facilitate Agile ceremonies.\n- Completed an internal workshop on generative AI and experimented with prompt engineering for meeting summaries.\n\nOperations Assistant - Proseware Inc (2021-2022)\n- Prepared weekly reports in Excel and coordinated vendor schedules.\n\nSKILLS\nProject Planning, Risk Management, Stakeholder Communication, Agile, Excel, Reporting, basic Python (learning), Prompt Engineering (introductory)\n\nEDUCATION\nB.A. Business Administration, Maple Grove College"
+    }
+  ]
+}
